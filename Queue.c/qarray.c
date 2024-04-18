@@ -4,7 +4,7 @@ int q[N],front=-1,rear=-1;
 void main(){
      while(1){
   if(rear == N-1)
-   { printf("\n queue is empty"); 
+   { printf("\n queue is full"); 
          break;
    }
    else if( front = -1 && rear == -1){
