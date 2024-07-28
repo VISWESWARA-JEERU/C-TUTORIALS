@@ -12,7 +12,7 @@ void main(){
     
    struct node *root;
      root = 0;
-     create();
+     root=create();
 
 };
  struct node* create() 
