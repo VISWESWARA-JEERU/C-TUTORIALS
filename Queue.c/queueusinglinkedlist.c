@@ -55,10 +55,9 @@ void dequeue(){
  void display(){
       if(front==NULL && rear == NULL){
           printf("\n queue is empty");
-           
       }
       temp = front;
-      while(temp!=NULL){
+      while(temp!=NULL){         
            printf(" %d->",temp->data);
            temp = temp->l;
       }

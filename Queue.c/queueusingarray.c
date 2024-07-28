@@ -7,7 +7,7 @@ void main(){
    { printf("\n queue is full"); 
          break;
    }
-   else if( front = -1 && rear == -1){
+   else if( front ==-1 && rear == -1){
      front = rear = 0;
      printf("\n enter the element : ");
      scanf("%d",&q[rear]);
