@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-
 struct node* create();               // These are 
 void preorder(struct node *root);    //          all the 
 void inorder(struct node *root);     //            declaration of
@@ -23,7 +22,7 @@ void main(){
      printf("\npost-order is : ");
      postorder(root); // function to call postorder
 };
- struct node* create() 
+struct  node* create() 
  {   
      struct node *newnode;
      newnode = (struct node*) malloc(sizeof(struct node));// creation of dynamic memory
@@ -40,26 +39,26 @@ void main(){
 void preorder(struct node *root){  //  function  prints the preorder
       if(root == 0)
       {
-         return 0;      // terminate the function here
+         return;      // terminate the function here
       }
-    printf("%d",root->data);
+    printf("%d ->",root->data);
     preorder(root->left);
     preorder(root->right);
 }
 void inorder(struct node *root){     //   function prints the inorder
     if(root == 0){
-         return 0;      // terminate the function here 
+         return;      // terminate the function here 
     }
-    printf(root->left);
-    printf("%d",root->data);
-    preorder(root->right);
+    inorder(root->left);
+    printf("%d ->",root->data);
+    inorder(root->right);
 }
 void postorder(struct node *root){  // functon prints the postorder 
     if(root == 0){
-         return 0;     // terminate the function here 
+         return ;     // terminate the function here 
     }
     
     postorder(root->left);
     postorder(root->right);
-    printf("%d",root->data);
+    printf("%d ->",root->data);
 }

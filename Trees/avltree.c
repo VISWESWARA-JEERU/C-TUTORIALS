@@ -140,7 +140,6 @@ struct Node *deleteNode(struct Node *root, int key)
 
   else if (key > root->key)
     root->right = deleteNode(root->right, key);
-
   else
   {
     if ((root->left == NULL) || (root->right == NULL))

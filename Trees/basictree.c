@@ -19,7 +19,7 @@ void main(){
  {   
      struct node *newnode;
      newnode = (struct node*) malloc(sizeof(struct node));
-     printf("\n enter the data value and enter -1 for no node");
+     printf("\n enter the data value and enter -1 for stoping (no node)");
      scanf("%d",&newnode->data);
      if(newnode->data==-1){
         return 0;
