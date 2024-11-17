@@ -14,7 +14,6 @@ int max(int a,int b){
     }else{
         return max(val[n-1]+knapsack(W-wt[n-1],wt,val,n-1),knapsack(W,wt,val,n-1));
     }
-//    return;
 
 }
  int main()

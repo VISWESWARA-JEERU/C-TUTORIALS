@@ -1,12 +1,8 @@
 #include <stdio.h>
-#include <conio.h>  // For Turbo C++ specific functions like getch()
-
-// Function to solve knapsack using dynamic programming
+#include <conio.h>  
 int knapsack(int W, int wt[], int val[], int n) {
     int i, w;
-    int K[100][100];  // Turbo C++ has smaller memory, so keeping array size reasonable
-
-    // Build table K[][] in a bottom-up manner
+    int K[100][100];
     for (i = 0; i <= n; i++) {
         for (w = 0; w <= W; w++) {
             if (i == 0 || w == 0)
@@ -18,18 +14,17 @@ int knapsack(int W, int wt[], int val[], int n) {
         }
     }
 
-    return K[n][W]; // The maximum value that can be obtained
+    return K[n][W];
 }
 
 int main() {
     int n, W;
 
-    // Clear the screen (specific to Turbo C++)
     
     printf("Enter the number of items: ");
     scanf("%d", &n);
 
-    int val[100], wt[100];  // Turbo C++ has limited array sizes
+    int val[100], wt[100]; 
     
     printf("Enter the values of the items:\n");
     for(int i = 0; i < n; i++) {
@@ -47,6 +42,6 @@ int main() {
     int maxValue = knapsack(W, wt, val, n);
     printf("Maximum value in knapsack = %d\n", maxValue);
 
-    getch();  // To hold the output screen (specific to Turbo C++)
+    getch();  
     return 0;
 }
