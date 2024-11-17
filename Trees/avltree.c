@@ -1,9 +1,8 @@
-// AVL tree implementation in C
+
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// Create Node
 struct Node
 {
   int key;
@@ -12,9 +11,7 @@ struct Node
   int height;
 };
 
-int max(int a, int b);
 
-// Calculate height
 int height(struct Node *N)
 {
   if (N == NULL)
@@ -27,7 +24,6 @@ int max(int a, int b)
   return (a > b) ? a : b;
 }
 
-// Create a node
 struct Node *newNode(int key)
 {
   struct Node *node = (struct Node *)
@@ -39,7 +35,6 @@ struct Node *newNode(int key)
   return (node);
 }
 
-// Right rotate
 struct Node *rightRotate(struct Node *y)
 {
   struct Node *x = y->left;
@@ -53,8 +48,6 @@ struct Node *rightRotate(struct Node *y)
 
   return x;
 }
-
-// Left rotate
 struct Node *leftRotate(struct Node *x)
 {
   struct Node *y = x->right;
@@ -69,7 +62,6 @@ struct Node *leftRotate(struct Node *x)
   return y;
 }
 
-// Get the balance factor
 int getBalance(struct Node *N)
 {
   if (N == NULL)
@@ -77,10 +69,8 @@ int getBalance(struct Node *N)
   return height(N->left) - height(N->right);
 }
 
-// Insert node
 struct Node *insertNode(struct Node *node, int key)
 {
-  // Find the correct position to insertNode the node and insertNode it
   if (node == NULL)
     return (newNode(key));
 
@@ -91,8 +81,6 @@ struct Node *insertNode(struct Node *node, int key)
   else
     return node;
 
-  // Update the balance factor of each node and
-  // Balance the tree
   node->height = 1 + max(height(node->left),
                          height(node->right));
 
@@ -128,10 +116,8 @@ struct Node *minValueNode(struct Node *node)
   return current;
 }
 
-// Delete a nodes
 struct Node *deleteNode(struct Node *root, int key)
 {
-  // Find the node and delete it
   if (root == NULL)
     return root;
 
@@ -167,9 +153,6 @@ struct Node *deleteNode(struct Node *root, int key)
 
   if (root == NULL)
     return root;
-
-  // Update the balance factor of each node and
-  // balance the tree
   root->height = 1 + max(height(root->left),
                          height(root->right));
 
@@ -195,7 +178,6 @@ struct Node *deleteNode(struct Node *root, int key)
   return root;
 }
 
-// Print the tree
 void printPreOrder(struct Node *root)
 {
   if (root != NULL)
